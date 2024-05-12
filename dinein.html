@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="navbar">
+        <div class="list">
+        <img class="image" src="https://logopond.com/logos/b7312baa20b58681fc25769b106e314a.png">
+
+        <ul class="order" type="none">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="dinein.html">Dine-In</a></li>
+            <li><a href="contact.html">Contact-us</a></li>
+            <li><a href="about.html">About-us</a></li>
+        </ul>
+        </div>
+
+    </div>
+    <title>dine-in</title>
+    <style>
+        .navbar{
+    background-color: white;
+    height: 100px;
+    position:relative;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+    width: 100%;
+    padding-top:10px ;
+    font-size: 25px;
+    padding-left: 300px;
+}
+
+.order li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+} 
+.order li a:hover{
+    color:blueviolet;
+    text-decoration:underline;
+}
+.image{
+    height:100px;
+    width:300px; 
+    margin-left: 30px;
+}
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.unsplash.com/photo-1497644083578-611b798c60f3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: fixed;
+        }
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        text-align: center;
+    }
+    .table {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        padding-top: 10px;
+        border: 2px solid #ccc;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    }
+    .table {
+        width: calc(50% - 20px); /* 50% width with some margin */
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px; /* Rounded corners */
+        box-sizing: border-box;
+    }
+    /* .table.booked {
+        background-color: #f00;
+    } */
+    .booked {
+        background-color: rgba(211, 211, 211, 0.315);
+        cursor: not-allowed;
+    }
+    form {
+        margin-top: 20px;
+    }
+    form input, form select {
+        margin-bottom: 10px;
+        padding: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    form button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    .myButton {
+        background-color: blue; 
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .myButton:hover {
+        background-color: green; 
+    }
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <h2 style="background-color:rgb(154, 216, 226);">Restaurant Table Booking</h2>
+        <div id="tables-container">
+                   </div>
+        <p id="message"></p>
+        <form id="booking-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <input type="number" id="persons" placeholder="Number of Persons" required>
+            <button class="myButton" onclick="bookTable(index)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">Book Table</button>
+                   </form>
+    </div>
+    <script>
+        // Sample data for table availability (0 for available, 1 for booked)
+        const tableAvailability = [0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0];
+        
+        // Function to create tables based on availability data
+        function createTables() {
+            const tablesContainer = document.getElementById('tables-container');
+            tablesContainer.innerHTML = '';
+    
+            
+            tableAvailability.forEach((status, index) => {
+                const table = document.createElement('div');
+                table.className = 'table';
+                table.textContent = 'Table ' + (index + 1);
+                //  table.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+                // table.style.backgroundImage = "url('https://media.istockphoto.com/id/1428737062/photo/empty-wooden-table-top-with-lights-bokeh-on-blur-restaurant-background.webp?b=1&s=170667a&w=0&k=20&c=bmQyPVwhLAB_FN9glJrREyPxzmIQPv5TOFcqcXHy2pw=')";
+                // table.style.backgroundBlendMode = 'overlay';
+    
+                if (status === 1) {
+                    table.classList.add('booked');
+                    // table.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+                    table.style.backgroundImage="url('https://as2.ftcdn.net/v2/jpg/05/26/29/23/1000_F_526292329_9fb2L3ppFlVNxggwms3YRWmAtwseBJvn.jpg')";
+                } else {
+                    table.addEventListener('click', () => bookTable(index));
+                    // table.style.backgroundBlendMode = 'overlay';
+                    // table.style.backgroundImage = "url('https://c0.wallpaperflare.com/preview/573/1002/365/lights-light-glow-design.jpg')";                
+                }
+                table.addEventListener('click', () => bookTable(index));
+                tablesContainer.appendChild(table);
+            });
+        }
+    
+               function bookTable(index) {
+         tableAvailability[index] = 1;
+        createTables();
+        showMessage('Table ' + (index + 1) + ' booked successfully!', 'green','lightyellow');
+        }
+        function showMessage(message, textColor, bgColor) {
+    const messageElement = document.getElementById('message');
+    messageElement.textContent = message;
+    messageElement.style.color = textColor; // Set text color
+    messageElement.style.backgroundColor = bgColor; // Set background color
+}
+        document.getElementById('booking-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const persons = document.getElementById('persons').value;
+
+        // Find the first available table and book it
+        const index = tableAvailability.indexOf(0);
+        if (index !== -1) {
+            bookTable(index);
+            showMessage('Table booked successfully for ' + name + ' (' + persons + ' persons)');
+            // Reset the form
+            this.reset();
+        } else {
+            showMessage('Sorry, no available tables at the moment.');
+        }
+    });
+    
+        // Initial table creation
+        createTables();
+    </script>
+</body>
+</html>

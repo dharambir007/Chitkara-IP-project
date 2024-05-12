@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Food Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(24,28,57);
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .menu-item {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Restaurant Food Booking</h2>
+    <form id="bookingForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="food">Food Item:</label>
+        <select id="food" name="food" required>
+            <option value="">Select food item</option>
+            <option value="Pizza">Pizza - $10</option>
+            <option value="Burger">Burger - $8</option>
+            <option value="Pasta">Pasta - $12</option>
+            <option value="Salad">Salad - $6</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+        <button type="button" onclick="addMenuItem()">Add Item</button>
+
+        <div id="menuItems"></div>
+
+        <label for="total">Total Amount:</label>
+        <input type="text" id="total" name="total" readonly>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    let totalAmount = 0;
+
+    function addMenuItem() {
+        const food = document.getElementById("food").value;
+        const quantity = parseInt(document.getElementById("quantity").value);
+        const price = getPrice(food);
+        const menuItem = `${food} x ${quantity} - $${price * quantity}`;
+        const menuItemElement = document.createElement("div");
+        menuItemElement.textContent = menuItem;
+        document.getElementById("menuItems").appendChild(menuItemElement);
+        totalAmount += price * quantity;
+        document.getElementById("total").value = `$${totalAmount}`;
+    }
+
+    function getPrice(food) {
+        switch (food) {
+            case "Pizza":
+                return  10;
+            case "Burger":
+                return 8;
+            case "Pasta":
+                return 12;
+            case "Salad":
+                return 6;
+            default:
+                return 0;
+        }
+    }
+
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        // Here you can add code to submit the form data to your server
+        alert("Form submitted successfully!");
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="list">
+            <img class="image" src="https://logopond.com/logos/b7312baa20b58681fc25769b106e314a.png">
+
+            <ul class="order" type="none">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="dinein.html">Dine-In</a></li>
+                <li><a href="contact.html">Contact-us</a></li>
+                <li><a href="about.html">About-us</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <h1 class="contact">Contact Us:</h1>
+    <p class="assist">Have questions or need assistance?<br> We're here to help! Drop us a message and we'll get back to
+        you as soon as possible.</p>
+
+    <form  class="transparent-form">
+        <div class="form-group full-name">
+            <input type="text" id="full-name" name="full-name" required placeholder="Your Full Name"  >
+        </div>
+
+        <div class="form-group email-address">
+            <input type="email" id="email" name="email" required placeholder="Your Email Address">
+        </div>
+
+        <div class="form-group phone-number">
+            <input type="tel" id="phone" name="phone" required placeholder="Your Phone Number">
+        </div>
+
+        <div class="form-group message-here">
+            <textarea id="message" name="message" rows="4" required placeholder="Message Here"></textarea>
+        </div>
+
+        <div id="btn" class="form-group submit-button">
+            <button id="btn1">submit</button>
+        </div>
+    </form>
+
+
+    <h1 class="details">Contact Details:</h1>
+    <div class="flex">
+        <div>
+            <img class="location"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxDk2f69akn8JQcP_GDKMTNyuvVqflF0l90-e874TJTw&s">
+            <p class="loc">Chitkara University baddi,Himachal Pradesh<br>(173205)</p>
+        </div>
+    <div>
+    <img class="phone" src="https://static-00.iconduck.com/assets.00/phone-icon-2048x2048-nottqc8j.png">
+    <p class="phn">+91 7888594463,+91 8427214060<br>+91 9015402398,+91 8409956855</p>
+    </div>
+        <div>
+            <img class="mail" src="https://cdn-icons-png.freepik.com/256/14025/14025140.png?semt=ais_hybrid">
+            <p class="ml">streetcafeofficial@gmail.com<br>streetcafesupport@gmail.com</p>
+        </div>
+            </div>
+<script>
+    const btn = document.getElementById("btn")
+    const name = document.getElementById('full-name');
+    const email = document.getElementById("email")
+    const phone = document.getElementById("phone")
+    const message = document.getElementById("message")
+    btn.addEventListener("click",()=>{
+        if(name.value != "" && email.value != "" && phone.value != "" && message.value != "" ){
+            alert("Thank You! Your Details are submitted");
+        }
+        else{
+            alert("Insufficient Inputs");
+        }
+    })
+</script>
+</body>
+<style>
+    #btn1{
+        margin-left: 60px;
+        background-color: #007afd;
+        border: none;
+        font-size: 25px;
+        color: white;
+        width:250px;
+        border-radius: 10px;
+    }
+    .mail {
+        /* margin-lehhabsft: 1400px; */
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        background-color: white;
+        ;
+    }
+
+    .ml {
+        /* margin-left: 1400px; */
+        color: white;
+        font-size: 20px;
+    }
+
+    .phone {
+        /* margin-left: 800px; */
+        width: 75px;
+        height: 75px;
+    }
+
+    .phn {
+        /* margin-left: 800px; */
+        color: white;
+        font-size: 20px;
+    }
+
+    .location {
+        /* margin-left: 200px; */
+        border-radius: 150px;
+        width: 75px;
+        height: 75px;
+    }
+
+    .loc {
+        /* margin-left: 200px; */
+        color: white;
+        font-size: 20px;
+    }
+
+
+    .transparent-form {
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 30px;
+        border-radius: 10px;
+        margin-left: 200px;
+        width: 350px;
+       
+    }
+
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        /* margin-left: 00px; */
+        width: 350px;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    input[type="submit"] {
+        margin-left: 50px;
+        width: 250px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .details {
+        color: white;
+        margin-left: 200px;
+        font-size: 50px;
+    }
+
+    .contact {
+        color: white;
+        margin-left: 200px;
+        font-size: 50px;
+
+    }
+
+    .assist {
+        color: white;
+        margin-left: 200px;
+        font-size: 30px;
+    }
+
+    .navbar {
+        background-color: white;
+        height: 100px;
+        position: relative;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .image {
+        height: 100px;
+        width: 300px;
+        margin-left: 30px;
+    }
+
+    .order {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        text-decoration: none;
+        width: 100%;
+        padding-top: 10px;
+        font-size: 25px;
+        padding-left: 300px;
+    }
+
+    .order li {
+        margin: 0 10px;
+    }
+
+    .order li a {
+        color: #333;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    .order li a:hover {
+        color: blueviolet;
+        text-decoration: underline;
+    }
+
+    body {
+        background-color: rgb(24, 28, 57);
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .flex {
+        display: flex;
+       justify-content: space-around;
+       margin-left:35px;
+    }
+</style>
+
+</html>

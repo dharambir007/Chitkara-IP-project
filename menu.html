@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="english">
+    <video id="video" autoplay loop muted>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+<head>
+    <link rel="stylesheet" href="menu.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <div class="navbar">
+        <div class="list">
+        <img class="image" src="https://logopond.com/logos/b7312baa20b58681fc25769b106e314a.png">
+
+        <ul class="order" type="none">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="dinein.html">Dine-In</a></li>
+            <li><a href="contact.html">Contact-us</a></li>
+            <li><a href="about.html">About-us</a></li>
+        </ul>
+        </div>
+
+    </div>
+    <title>Menu</title>
+    
+      <header>
+        <h1>Street Cafe</h1>
+        </header>
+    <div class="offer">
+        <p>Get 20% off on first order!</p>
+    </div>
+</head>
+
+<!-- <style>
+        /* .body{
+            <video src=URL'video.mp4' >
+        } */
+        
+        
+        
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 0 20px; /* Add some padding to the container */
+        }
+        .menu-item {
+            flex: 0 0 calc(33.33% - 20px); /* Adjust width for three items in a row */
+            margin-bottom: 20px; /* Add margin between items */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+        transform: scale(1.1); /* Scale the menu item on hover */
+        }
+        .item-name {
+            background-color:blueviolet;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .item-description {
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+        .item-price {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+        }
+        /* Different background images for each menu item */
+        .menu-item:nth-child(1) {
+            background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSlHFF8kaXjHA8AQsYHSsxARWAsw-yIrsFLExz6GY0bdMC5qjES');
+            background-size: cover;
+        }
+        .menu-item:nth-child(2) {
+            background-image: url('pasta.jpg');
+            background-size: cover;
+        }
+        .menu-item:nth-child(3) {
+            background-image: url('pizza.jpg');
+            background-size: cover;
+        }
+        .menu-item:nth-child(4) {
+            background-image: url('dosa.jpg');
+            background-size: cover;
+        }
+        .menu-item:nth-child(5) {
+            background-image: url('pav_bhaji.jpg');
+            background-size: cover;
+        }
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.offer {
+    background-color: #FFA500;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrollbars caused by video overflow */
+}
+
+#video-bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Set the video behind other content */
+    overflow: hidden; /* Hide overflow content of the video */
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background to make content readable */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative; /* Ensure content appears on top of the video */
+    z-index: 1; /* Set content above the video */
+}
+
+.offer {
+    background-color: rgba(251, 255, 0, 0.904); /* Semi-transparent background for offer */
+    color:black;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* Ensure content appears on top of the video */
+    z-index: 1; /* Set content above the video */
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.offer:hover {
+    background-color: rgba(255, 0, 0, 0.87); /* Change background color on hover */
+}
+
+.container {
+    /* Add necessary styles for the container */
+}
+
+</style> -->
+
+<body class="body" style="height: auto; overflow: auto;">
+    <!-- <video id="video" autoplay loop muted>
+        <source src="video.mp4" type="video/mp4">
+    </video> -->
+<div class="container">
+    
+    <div class="menu-container">
+        
+        <div class="menu-item">
+            <div class="item-name">Paneer Tikka</div>
+            <div class="item-description">Fresh paneer tikka with spicy and super flavourable tandoori masala and grilled onions.</div>
+            <div class="item-price">Rs.399
+            <input type="submit" value="select">
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-name">Red Sauce Pasta</div>
+            <div class="item-description">Pasta tossed with seasonal vegetables in a creamy Alfredo sauce.</div>
+            <div class="item-price">Rs.349
+                <input type="submit" value="select">
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-name">Pizza</div>
+            <div class="item-description">Extra cheese with fresh vegetables, topped with oregano, olive oil.</div>
+            <div class="item-price">Rs.179
+                <input type="submit" value="select">
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-name">Masala Dosa</div>
+            <div class="item-description">Dosa Stuffed with Potato Masala served with fresh coconut chutney and sambar.</div>
+            <div class="item-price">Rs.239
+                <input type="submit" value="select">
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-name">Pav-Bhaji</div>
+            <div class="item-description">Mumbai style pav-bhaji that has delicious blend of spicy mixed vegetables.</div>
+            <div class="item-price">Rs.140
+                <input type="submit" value="select">
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-name">Veg-Thali</div>
+            <div class="item-description">Rice, Dal makhni, Paneer Masala, Salad, 3 chapati, Ice cream/Gulab jamun[Subject to avaliability]</div>
+            <div class="item-price">Rs.169
+                <input type="submit" value="select">
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-name">Veg Noodles</div>
+            <div class="item-description">A delectable combinations of crunchy vegetables, noodles and sauce make a lip-samacking meal.</div>
+            <div class="item-price">Rs.139
+                <input type="submit" value="select">
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-name">Veg Biryani</div>
+            <div class="item-description">Slow cooked rice with spices and herbs served with cucumber salad and ratia.</div>
+            <div class="item-price">Rs.249
+                <input type="submit" value="select">
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-name">Manchurian with Fried Rice</div>
+            <div class="item-description">Deep fried mixed vegetables dumplings tossed in Chinese sauces and with fresh fried rice.</div>
+            <div class="item-price">Rs.289
+                <input type="submit" value="select">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
